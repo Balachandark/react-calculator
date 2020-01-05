@@ -13,7 +13,8 @@ class App extends Component {
     }
   }
 
-  onClick = ( button ) => {
+  onClick = ( e ) => {
+    const button = e.target.name;
     if( button === '=' ) {
       this.calculate()
     }
@@ -26,6 +27,8 @@ class App extends Component {
       this.backspace();
     }
     else {
+      console.log( this.state.result );
+      console.log( button );
       this.setState({
         result: this.state.result + button
       })
